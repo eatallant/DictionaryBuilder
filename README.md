@@ -20,3 +20,11 @@ More is coming! Here is a list of upcoming features:
 - Node.js
 - Express.js
 
+## Run the app locally
+1. Download the project
+2. Navigate to the folder in a terminal window
+3. Run node index.js
+```
+$ node index.js
+```
+4. In a browser window, navigate to localhost:8000
