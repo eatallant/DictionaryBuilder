@@ -14,7 +14,7 @@ More is coming! Here is a list of upcoming features:
 - filtering
 
 ## Technical
-- Javascript
+- Vanilla Javascript
 - HTML
 - CSS
 - Node.js
