@@ -8,7 +8,10 @@ Definitions to words are provided by Free Dictionary API. More information can b
 The application is currently a bare bones interface to interact with the API. 
 One set of definitions is returned (for the noun/verb/adjective, whichever comes first).
 <br>
-More is coming! Here is a list of upcoming features
+More is coming! Here is a list of upcoming features:
+- data persistence
+- sorting
+- filtering
 
 ## Technical
 - Javascript
