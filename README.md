@@ -12,6 +12,7 @@ More is coming! Here is a list of upcoming features:
 - data persistence
 - sorting
 - filtering
+- definition type selection (part of speech)
 
 ## Technical
 - Vanilla Javascript
