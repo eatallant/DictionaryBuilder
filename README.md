@@ -9,7 +9,7 @@ The application is currently a bare bones interface to interact with the API.
 One set of definitions is returned (for the noun/verb/adjective, whichever comes first).
 <br>
 More is coming! Here is a list of upcoming features:
-- data persistence
+- ~~data persistence~~ added 4/19/22
 - sorting
 - filtering
 - definition type selection (part of speech)
