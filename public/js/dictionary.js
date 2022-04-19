@@ -1,7 +1,15 @@
 import renderHTML from "./modules/renderHTML.js";
+import store from "./modules/store.js";
 
 ("use strict");
 console.log("page load successful");
+
+let dictionary = store().getDefinitions;
+
+// function is called in index.html
+window.handleFindWordClick = () => {
+  createNewDefinition();
+};
 
 const wordCounter = (() => {
   let count = 0;
@@ -13,7 +21,7 @@ const wordCounter = (() => {
   };
 })();
 
-window.createNewDefinition = () => {
+const createNewDefinition = () => {
   const word = prompt("Enter a word");
 
   if (!word) {
@@ -26,6 +34,9 @@ window.createNewDefinition = () => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data[0].meanings); // catch 404 error before any HTML rendering
+      dictionary.push(data);
+      store().setDefinitions(dictionary);
+      console.log("dictionary array: ", dictionary);
       renderHTML().newEntry(word);
       data[0].meanings.map((meaning) => {
         let definition = meaning.definitions[0].definition;
