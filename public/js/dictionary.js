@@ -51,7 +51,6 @@ const updateDOM = () => {
   dictionary.map((word) => {
     wordCounter.increment();
     let id = wordCounter.current();
-    console.log(word[0].word);
     renderHTML().newEntry(word[0].word, id);
     word[0].meanings.map((meaning) => {
       let definition = meaning.definitions[0].definition;
