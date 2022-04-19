@@ -3,9 +3,14 @@ let count = 0;
 
 export default function renderHTML() {
   return {
-    newEntry: (word) => {
+    clearAll: () => {
+      const node = document.getElementById("dictionary-body");
+      node.textContent = "";
+    },
+
+    newEntry: (word, id) => {
       let dictionaryBody = document.getElementById("dictionary-body");
-      let id = count++; //this needs replaced with the GUID function when it's available
+      //let id = count++; //this needs replaced with the GUID function when it's available
 
       //append header
       let node = document.createElement("h3");

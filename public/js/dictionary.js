@@ -18,6 +18,7 @@ const wordCounter = (() => {
     increment: () => addToCount(1),
     decrement: () => addToCount(-1),
     current: () => count,
+    reset: () => (count = 0),
   };
 })();
 
@@ -36,14 +37,7 @@ const createNewDefinition = () => {
       console.log(data[0].meanings); // catch 404 error before any HTML rendering
       dictionary.push(data);
       store().setDefinitions(dictionary);
-      console.log("dictionary array: ", dictionary);
-      renderHTML().newEntry(word);
-      data[0].meanings.map((meaning) => {
-        let definition = meaning.definitions[0].definition;
-        renderHTML().definition(definition, wordCounter.current());
-      });
-      updateTitle();
-      wordCounter.increment();
+      updateDOM();
     })
     .catch((ex) => {
       console.log(ex);
@@ -51,7 +45,25 @@ const createNewDefinition = () => {
     });
 };
 
+const updateDOM = () => {
+  wordCounter.reset();
+  renderHTML().clearAll();
+  dictionary.map((word) => {
+    wordCounter.increment();
+    let id = wordCounter.current();
+    console.log(word[0].word);
+    renderHTML().newEntry(word[0].word, id);
+    word[0].meanings.map((meaning) => {
+      let definition = meaning.definitions[0].definition;
+      renderHTML().definition(definition, id);
+    });
+  });
+  updateTitle();
+};
+
 // track total words processed in document title
 const updateTitle = () => {
-  document.title = "Dictionary (" + (wordCounter.current() + 1) + ")";
+  document.title = "Dictionary (" + wordCounter.current() + ")";
 };
+
+(() => updateDOM())(); // render any stored words on page load
