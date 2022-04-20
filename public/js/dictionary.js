@@ -12,7 +12,7 @@ window.handleFindWordClick = () => {
 };
 
 const wordCounter = (() => {
-  let count = 0;
+  let count = dictionary.length;
   const addToCount = (val) => (count += val);
   return {
     increment: () => addToCount(1),
@@ -66,3 +66,9 @@ const updateTitle = () => {
 };
 
 (() => updateDOM())(); // render any stored words on page load
+
+// USED FOR TESTING
+window.clearWords = () => {
+  renderHTML().clearAll();
+  store().setDefinitions([]);
+};
