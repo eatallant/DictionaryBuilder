@@ -1,7 +1,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #eaeaea;
+  background-color: #fff;
 }
 
 .wrapper {
@@ -23,4 +23,17 @@ body {
 .word-btn:hover {
   background-color: #555;
   cursor: pointer;
+}
+
+.word-wrapper {
+  margin: 10px;
+  padding: 10px;
+  max-width: 80%;
+  border: 1px solid transparent;
+}
+
+.word-wrapper:hover {
+  border: 1px solid gray;
+  box-shadow: 1px #555;
+  border-radius: 8px;
 }
