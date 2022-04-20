@@ -13,16 +13,19 @@ export default function renderHTML() {
       //let id = count++; //this needs replaced with the GUID function when it's available
 
       //append header
+      let wrapper = document.createElement("article");
+      wrapper.setAttribute("class", "word-wrapper");
       let node = document.createElement("h3");
       let textnode = document.createTextNode(word);
+      wrapper.appendChild(node);
       node.appendChild(textnode);
-      dictionaryBody.appendChild(node);
+      dictionaryBody.appendChild(wrapper);
 
       //append ordered list with unique id
       node = document.createElement("ol");
       node.setAttribute("id", id);
       node.setAttribute("class", "definition-list");
-      dictionaryBody.appendChild(node);
+      wrapper.appendChild(node);
     },
 
     definition: (definition, id) => {
