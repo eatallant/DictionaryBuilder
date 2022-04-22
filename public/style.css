@@ -34,7 +34,11 @@ body {
 
 .word-wrapper:hover {
   border: 1px solid #aaa;
-  box-shadow: 0px 0px 4px #555;
+  box-shadow: 0px 0px 4px #999;
   border-radius: 8px;
-  background-color: rgb(234, 233, 255);
+  background-color: rgb(210, 233, 255);
+}
+
+.word-wrapper h3 {
+  margin-top: 0px;
 }
