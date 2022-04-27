@@ -15,6 +15,7 @@ export default function renderHTML() {
       //append header
       let wrapper = document.createElement("article");
       wrapper.setAttribute("class", "word-wrapper");
+      wrapper.setAttribute("id", id);
       let node = document.createElement("h3");
       let textnode = document.createTextNode(word);
       wrapper.appendChild(node);
@@ -23,7 +24,6 @@ export default function renderHTML() {
 
       //append ordered list with unique id
       node = document.createElement("ol");
-      node.setAttribute("id", id);
       node.setAttribute("class", "definition-list");
       wrapper.appendChild(node);
     },
