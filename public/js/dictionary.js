@@ -70,5 +70,6 @@ const updateTitle = () => {
 // USED FOR TESTING
 window.clearWords = () => {
   renderHTML().clearAll();
+  dictionary = [];
   store().setDefinitions([]);
 };
